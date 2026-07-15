@@ -50,11 +50,11 @@ Built for developers, analysts, and UI testing purposes, the overlay provides ES
 
 ## 🖼 Preview
 
-![Valorant ESP Overlay](https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt93b24a95f9b5e89f/5eb26f5389c24c0cfd3df4b6/VALORANT_YR1_KeyArt_4K.jpg)
+![Valorant ESP Overlay](https://i.pinimg.com/736x/de/51/31/de5131f176058745f133aab7eb5dbe85.jpg)
 
 ---
 
-![Valorant Map Overlay](https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt7e8f1bb157ccd44f/5eb26f5f7a95a10cfb51d86b/Maps_Split.jpg)
+![Valorant Map Overlay](https://lavicheats.com/uploads/monthly_2024_08/Valorantcheatsinaction.webp.0936004355110f79b50d802b154b24e9.webp)
 
 ---
 
